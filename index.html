@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Cardápio digital do Espetinho. Brochettes, pizzas, hamburguesas, bebidas e muito mais." />
+  <meta name="theme-color" content="#0e0c08" />
+  <title>Espetinho — Cardápio Digital</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<div class="page-wrapper">
+
+  <!-- =====================================================
+       HEADER — Altere nome, endereço, Instagram e WhatsApp
+       ===================================================== -->
+  <header class="site-header">
+
+    <!-- Ícone de chama -->
+    <div class="logo" aria-hidden="true">
+      <svg class="flicker" width="32" height="40" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        
+        <path d="M16 20C14 22 13.4 25.2 14 27.6C14.6 28 15.3 28.2 16 28.2C18.4 28.2 20.6 26.4 20 26C16 24 16 20 16 20Z" fill="#f5a832"/>
+        <defs>
+          <linearGradient id="flame-a" x1="16" y1="2" x2="16" y2="28" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#f5a832"/>
+            <stop offset="0.5" stop-color="#f0900a"/>
+            <stop offset="1" stop-color="#c27408"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+
+    <!-- Nome e subtítulo -->
+    <h1 class="site-title">Churrasquinho</h1>
+    <p class="site-subtitle">Carta</p>
+
+    <!-- Informações de contato -->
+    <div class="header-info">
+      <span>
+        <!-- Ícone: localização -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/>
+          <circle cx="12" cy="10" r="3"/>
+        </svg>
+        <!-- ✏️ EDITE: endereço -->
+        25 N9 entre 32 y 33
+      </span>
+
+      <span>
+        <!-- Ícone: Instagram -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+          <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+        </svg>
+        <!-- ✏️ EDITE: @ do Instagram -->
+        @churrasquinhobrasil
+      </span>
+
+      <span>
+        <!-- Ícone: relógio -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M12 6v6l4 2"/>
+        </svg>
+        Pedidos via WhatsApp
+      </span>
+    </div>
+
+  </header>
+
+  <!-- =====================================================
+       NAVEGAÇÃO DE CATEGORIAS
+       data-target deve ser igual ao id da <section> abaixo
+       ===================================================== -->
+  <nav class="cat-nav-wrapper" aria-label="Categorías">
+    <div class="cat-nav">
+      <button class="cat-pill active" data-target="brochettes">Brochettes</button>
+      <button class="cat-pill"        data-target="entradas">Entradas</button>
+      <button class="cat-pill"        data-target="pizzas">Pizzas</button>
+      <button class="cat-pill"        data-target="hamburguesas">Hamburguesas</button>
+      <button class="cat-pill"        data-target="sandwiches">Sándwiches y otros</button>
+      <button class="cat-pill"        data-target="acompanamentos">Acompañamientos</button>
+      <button class="cat-pill"        data-target="bebidas">Bebidas</button>
+      <button class="cat-pill"        data-target="cerveza">Cerveza</button>
+    </div>
+  </nav>
+
+  <!-- =====================================================
+       CARDÁPIO — SEÇÕES E ITENS
+       Para editar: altere o texto entre as tags <span class="item-name"> e o preço em <span class="price-badge">
+       Para adicionar item: copie um bloco <div class="menu-card"> e cole dentro do <div class="menu-list">
+       Para adicionar seção: copie um bloco <section class="menu-section"> completo
+       ===================================================== -->
+  <main class="site-main">
+
+    <!-- ─── 🔥 BROCHETTES ─────────────────────────────────── -->
+    <section class="menu-section" id="brochettes">
+      <div class="section-header">
+        <span class="section-emoji" aria-hidden="true">🔥</span>
+        <h2 class="section-title">Brochettes</h2>
+      </div>
+
+      <div class="menu-list">
+        <div class="menu-card">
+          <span class="item-name">Carne</span>
+          <span class="price-badge">$4.000</span>
+        </div>
+        <div class="menu-card">
+          <span class="item-name">Pollo</span>
+          <span class="price-badge">$4.000</span>
+        </div>
+        <div class="menu-card">
+          <span class="item-name">Corazón de pollo</span>
+          <span class="price-badge">$3.000</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 🥟 ENTRADAS ───────────────────────────────────── -->
+    <section class="menu-section" id="entradas">
+      <div class="section-header">
+        <span class="section-emoji" aria-hidden="true">🥟</span>
+        <h2 class="section-title">Entradas</h2>
+      </div>
+
+      <div class="menu-list">
+        <div class="menu-card">
+          <span class="item-name">Coxinha de pollo</span>
+          <span class="price-badge">$4.000</span>
+        </div>
+        <div class="menu-card">
+          <span class="item-name">Coxinha de carne</span>
+          <span class="price-badge">$4.000</span>
+        </div>
+        <div class="menu-card">
+          <span class="item-name">Pastel de carne</span>
+          <span class="price-badge">$3.000</span>
+        </div>
+        <div class="menu-card">
+          <span class="item-name">Pastel de pollo</span>
+          <span class="price-badge">$3.000</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 🍕 PIZZAS ─────────────────────────────────────── -->
+    <section class="menu-section" id="pizzas">
+      <div class="section-header">
+        <span class="section-emoji" aria-hidden="true">🍕</span>
+        <h2 class="section-title">Pizzas</h2>
+      </div>
+
+      <div class="menu-list">
+        <div class="menu-card">
+          <span class="item-name">Muzzarela</span>
+          <span class="price-badge">$12.000</span>
+        </div>
+        <div class="menu-card">
+          <span class="item-name">Especial</span>
+          <span class="price-badge">$13.000</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 🍔 HAMBURGUESAS ───────────────────────────────── -->
+    <section class="menu-section" id="hamburguesas">
+      <div class="section-header">
+        <span class="section-emoji" aria-hidden="true">🍔</span>
+        <h2 class="section-title">Hamburguesas</h2>
+      </div>
+
+      <div class="menu-list">
+        <div class="menu-card">
+          <span class="item-name">Simple</span>
+          <span class="price-badge">$7.000</span>
+        </div>
+        <div class="menu-card">
+          <span class="item-name">Doble</span>
+          <span class="price-badge">$9.000</span>
+        </div>
+        <div class="menu-card">
+          <span class="item-name">Simple + papas</span>
+          <span class="price-badge">$9.000</span>
+        </div>
+        <div class="menu-card">
+          <span class="item-name">Doble + papas</span>
+          <span class="price-badge">$11.000</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 🥪 SÁNDWICHES Y OTROS ─────────────────────────── -->
+    <section class="menu-section" id="sandwiches">
+      <div class="section-header">
+        <span class="section-emoji" aria-hidden="true">🥪</span>
+        <h2 class="section-title">Sándwiches y otros</h2>
+      </div>
+
+      <div class="menu-list">
+        <div class="menu-card">
+          <span class="item-name">Bondiola con papas</span>
+          <span class="price-badge">$10.000</span>
+        </div>
+        <div class="menu-card">
+          <span class="item-name">Lomito con queso, tomate, cebolla y rúcula</span>
+          <span class="price-badge">$10.000</span>
+        </div>
+        <div class="menu-card">
+          <span class="item-name">Alitas BBQ con papas</span>
+          <span class="price-badge">$10.000</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 🍟 ACOMPAÑAMIENTOS ────────────────────────────── -->
+    <section class="menu-section" id="acompanamentos">
+      <div class="section-header">
+        <span class="section-emoji" aria-hidden="true">🍟</span>
+        <h2 class="section-title">Acompañamientos</h2>
+      </div>
+
+      <div class="menu-list">
+        <div class="menu-card">
+          <span class="item-name">Papas fritas</span>
+          <span class="price-badge">$4.000</span>
+        </div>
+        <div class="menu-card">
+          <span class="item-name">Arroz</span>
+          <span class="price-badge">$3.000</span>
+        </div>
+        <div class="menu-card">
+          <span class="item-name">Ensalada rusa</span>
+          <span class="price-badge">$3.000</span>
+        </div>
+        <div class="menu-card">
+          <span class="item-name">Salsa criolla</span>
+          <span class="price-badge">$2.000</span>
+        </div>
+        <div class="menu-card">
+          <span class="item-name">Farofa</span>
+          <span class="price-badge">$2.000</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 🥤 BEBIDAS ────────────────────────────────────── -->
+    <section class="menu-section" id="bebidas">
+      <div class="section-header">
+        <span class="section-emoji" aria-hidden="true">🥤</span>
+        <h2 class="section-title">Bebidas</h2>
+      </div>
+
+      <div class="menu-list">
+        <div class="menu-card">
+          <span class="item-name">Coca Cola / Fanta / Sprite (lata 350ml)</span>
+          <span class="price-badge">$3.000</span>
+        </div>
+        <div class="menu-card">
+          <span class="item-name">Coca Cola 500ml</span>
+          <span class="price-badge">$3.500</span>
+        </div>
+        <div class="menu-card">
+          <span class="item-name">Fanta 500ml</span>
+          <span class="price-badge">$3.500</span>
+        </div>
+        <div class="menu-card">
+          <span class="item-name">Sprite 500ml</span>
+          <span class="price-badge">$3.500</span>
+        </div>
+        <div class="menu-card">
+          <span class="item-name">Coca Cola 2.25L</span>
+          <span class="price-badge">$5.000</span>
+        </div>
+        <div class="menu-card">
+          <span class="item-name">Fanta 2.25L</span>
+          <span class="price-badge">$5.000</span>
+        </div>
+        <div class="menu-card">
+          <span class="item-name">Sprite 2.25L</span>
+          <span class="price-badge">$5.000</span>
+        </div>
+        <div class="menu-card">
+          <span class="item-name">Aquarius 2.25L</span>
+          <span class="price-badge">$4.000</span>
+        </div>
+        <div class="menu-card">
+          <span class="item-name">Agua 500ml</span>
+          <span class="price-badge">$3.000</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 🍺 CERVEZA ───────────────────────────────────── -->
+    <section class="menu-section" id="cerveza">
+      <div class="section-header">
+        <span class="section-emoji" aria-hidden="true">🍺</span>
+        <h2 class="section-title">Cerveza</h2>
+      </div>
+
+      <div class="menu-list">
+        <div class="menu-card">
+          <span class="item-name">Honey pinta</span>
+          <span class="price-badge">$5.000</span>
+        </div>
+        <div class="menu-card">
+          <span class="item-name">Golden pinta</span>
+          <span class="price-badge">$5.000</span>
+        </div>
+        <div class="menu-card">
+          <span class="item-name">Skol 275ml</span>
+          <span class="price-badge">$4.000</span>
+        </div>
+        <div class="menu-card">
+          <span class="item-name">Corona 330ml</span>
+          <span class="price-badge">$4.000</span>
+        </div>
+        <div class="menu-card">
+          <span class="item-name">Corona 710ml</span>
+          <span class="price-badge">$7.000</span>
+        </div>
+        <div class="menu-card">
+          <span class="item-name">Heineken 473ml</span>
+          <span class="price-badge">$4.000</span>
+        </div>
+        <div class="menu-card">
+          <span class="item-name">Quilmes 473ml</span>
+          <span class="price-badge">$3.000</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── COMPARTILHE O CARDÁPIO ───────────────────────── -->
+    <section class="share-section">
+      <button class="share-toggle" aria-expanded="false">
+        <h2 class="section-title">Compartí la Carta</h2>
+        <svg class="share-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="m6 9 6 6 6-6"/>
+        </svg>
+      </button>
+      <div class="share-content">
+        
+        <button id="share-btn" class="cat-pill active" style="margin-top: 12px; border: none;">
+          
+        </button>
+      </div>
+    </section>
+
+    <div class="footer-spacer"></div>
+  </main>
+
+  <!-- =====================================================
+       BOTÃO WHATSAPP FLUTUANTE
+       ✏️ EDITE: troque o número em href (formato: 54 + DDD + número)
+       ✏️ EDITE: troque o texto do pedido (após "text=")
+       ===================================================== -->
+  <a
+    href="https://wa.me/542215349998?text=Ol%C3%A1!%20Quero%20fazer%20um%20pedido%20%F0%9F%94%A5"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="wa-btn"
+    aria-label="Fazer pedido pelo WhatsApp"
+  >
+    <!-- Ícone de mensagem -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24"
+         fill="#fff" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/>
+    </svg>
+  </a>
+
+</div><!-- /.page-wrapper -->
+
+<script src="assets/js/script.js"></script>
+</body>
+</html>

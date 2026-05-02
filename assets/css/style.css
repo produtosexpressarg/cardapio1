@@ -1,0 +1,386 @@
+/* =============================================================
+   ESPETINHO — CARDÁPIO DIGITAL
+   style.css
+   Edite as variáveis de cor na seção ":root" para mudar o tema.
+   ============================================================= */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+/* ----------------------------------------------------------
+   VARIÁVEIS — Cores e tokens globais
+   ---------------------------------------------------------- */
+:root {
+  --bg-base:        #0e0c08;  /* fundo principal da página      */
+  --bg-card:        #1a1710;  /* fundo dos cards de item        */
+  --bg-card-hover:  #221f14;  /* fundo dos cards ao passar o mouse */
+  --bg-nav:         #141209;  /* fundo da barra de navegação    */
+
+  --amber:          #f0900a;  /* cor de destaque (âmbar)        */
+  --amber-light:    #f5a832;  /* âmbar claro (gradientes)       */
+  --amber-dim:      #c27408;  /* âmbar escuro (sombras/badges)  */
+
+  --cream:          #f5f0e8;  /* texto principal                */
+  --cream-muted:    #b8a98c;  /* texto secundário               */
+  --cream-faint:    #6b5e47;  /* texto terciário (info do header) */
+
+  --border:         #2c2820;  /* borda padrão dos cards         */
+  --border-amber:   #3d2e10;  /* borda dos cards ao hover       */
+}
+
+/* ----------------------------------------------------------
+   RESET & BASE
+   ---------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-base);
+  color: var(--cream);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Scrollbar customizada */
+::-webkit-scrollbar       { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg-base); }
+::-webkit-scrollbar-thumb { background: var(--amber-dim); border-radius: 2px; }
+
+/* ----------------------------------------------------------
+   LAYOUT GERAL
+   ---------------------------------------------------------- */
+.page-wrapper {
+  min-height: 100vh;
+  background: var(--bg-base);
+  max-width: 480px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* ----------------------------------------------------------
+   HEADER
+   ---------------------------------------------------------- */
+.site-header {
+  padding: 32px 20px 24px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+  background: radial-gradient(ellipse at 50% 0%, rgba(240,144,10,0.12) 0%, transparent 70%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Textura de ruído sutil */
+.site-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+/* Logo circular com chama */
+.logo-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px dashed var(--border-amber);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  background: var(--bg-card);
+  position: relative;
+}
+
+/* Título principal */
+.site-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.6rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  margin: 0;
+  background: linear-gradient(135deg, var(--cream) 40%, var(--amber-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.1;
+}
+
+/* Subtítulo "Cardápio Digital" */
+.site-subtitle {
+  color: var(--cream-muted);
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin: 8px 0 0;
+  font-weight: 500;
+}
+
+/* Info do header (endereço, instagram, horário) */
+.header-info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px 18px;
+  margin-top: 14px;
+  color: var(--cream-faint);
+  font-size: 0.75rem;
+}
+
+.header-info span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* ----------------------------------------------------------
+   NAVEGAÇÃO DE CATEGORIAS
+   ---------------------------------------------------------- */
+.cat-nav-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: var(--bg-nav);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(8px);
+}
+
+.cat-nav {
+  display: flex;
+  gap: 8px;
+  padding: 10px 16px;
+  overflow-x: auto;
+  /* Oculta a scrollbar horizontal da nav */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.cat-nav::-webkit-scrollbar { display: none; }
+
+/* Pill / botão de categoria */
+.cat-pill {
+  white-space: nowrap;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 0.8rem;
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--cream-muted);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cat-pill.active,
+.cat-pill:hover {
+  background: var(--amber);
+  color: #0e0c08;
+  border-color: var(--amber);
+  font-weight: 700;
+}
+
+/* ----------------------------------------------------------
+   CONTEÚDO PRINCIPAL
+   ---------------------------------------------------------- */
+.site-main {
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+/* ----------------------------------------------------------
+   SEÇÕES DO CARDÁPIO
+   ---------------------------------------------------------- */
+.menu-section {
+  scroll-margin-top: 100px; /* espaço para a nav sticky */
+}
+
+/* Cabeçalho de cada seção (emoji + título) */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.section-emoji {
+  font-size: 1.4rem;
+}
+
+/* Título das seções */
+.section-title {
+  color: var(--cream);
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.25rem;
+  margin: 0;
+  position: relative;
+}
+
+/* Sublinhado âmbar decorativo */
+.section-title::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--amber), transparent);
+  border-radius: 2px;
+  margin-top: 6px;
+}
+
+/* Lista de itens dentro de uma seção */
+.menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ----------------------------------------------------------
+   CARDS DE ITEM
+   ---------------------------------------------------------- */
+.menu-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  transition: border-color 0.2s, background 0.2s, transform 0.15s;
+}
+
+.menu-card:hover {
+  border-color: var(--border-amber);
+  background: var(--bg-card-hover);
+  transform: translateY(-1px);
+}
+
+/* Nome do item */
+.item-name {
+  color: var(--cream);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 0.925rem;
+  line-height: 1.4;
+}
+
+/* Badge de preço */
+.price-badge {
+  background: linear-gradient(135deg, var(--amber), var(--amber-dim));
+  color: #0e0c08;
+  letter-spacing: 0.02em;
+  border-radius: 20px;
+  padding: 4px 14px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* ----------------------------------------------------------
+   SEÇÃO "COMPARTILHE O CARDÁPIO"
+   ---------------------------------------------------------- */
+.share-section {
+  border-top: 1px solid var(--border);
+  padding-top: 28px;
+}
+
+.share-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.share-toggle .section-title {
+  font-size: 1.1rem;
+  pointer-events: none;
+}
+
+.share-icon {
+  color: var(--amber);
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+
+.share-icon.open {
+  transform: rotate(180deg);
+}
+
+/* Conteúdo oculto da seção de compartilhamento */
+.share-content {
+  display: none;
+  margin-top: 16px;
+  color: var(--cream-muted);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.share-content.open {
+  display: block;
+}
+
+/* Espaço final antes do botão flutuante */
+.footer-spacer {
+  height: 80px;
+}
+
+/* ----------------------------------------------------------
+   BOTÃO FLUTUANTE DO WHATSAPP
+   ---------------------------------------------------------- */
+.wa-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 20px;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #25d366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.35);
+  animation: waPulse 2.5s infinite;
+}
+
+/* ----------------------------------------------------------
+   ANIMAÇÕES
+   ---------------------------------------------------------- */
+@keyframes waPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
+  50%       { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1;   transform: scaleY(1); }
+  33%       { opacity: 0.85; transform: scaleY(0.97) scaleX(1.02); }
+  66%       { opacity: 0.9;  transform: scaleY(1.03) scaleX(0.98); }
+}
+
+.flicker {
+  animation: flicker 2s ease-in-out infinite;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-up {
+  animation: fadeUp 0.5s forwards;
+}
