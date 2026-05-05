@@ -202,7 +202,7 @@ body {
    SEÇÕES DO CARDÁPIO
    ---------------------------------------------------------- */
 .menu-section {
-  scroll-margin-top: 100px; /* espaço para a nav sticky */
+  scroll-margin-top: px; /* espaço para a nav sticky */
 }
 
 /* Cabeçalho de cada seção (emoji + título) */
@@ -284,6 +284,14 @@ body {
   font-size: 0.85rem;
   font-weight: 700;
   flex-shrink: 0;
+}
+/* arredondar imagem*/
+.menu-card img{
+  margin-left:auto;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 12px;
 }
 
 /* ----------------------------------------------------------
