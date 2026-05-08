@@ -42,7 +42,7 @@
 
 html {
   scroll-behavior: smooth;
-  height: 100%;
+  
 }
 
 body {
@@ -51,8 +51,7 @@ body {
   font-family: 'DM Sans', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
-  overflow-y: auto;        /* ← garante scroll vertical */
-  min-height: 100%;
+  
 }
 
 /* Scrollbar customizada */
@@ -64,7 +63,7 @@ body {
    LAYOUT GERAL
    ---------------------------------------------------------- */
 .page-wrapper {
-  min-height: 100vh;
+  
   background: var(--bg-base);
   width: 100%;
   max-width: 100%;
@@ -234,7 +233,7 @@ body {
    SEÇÕES DO CARDÁPIO
    ---------------------------------------------------------- */
 .menu-section {
-  scroll-margin-top: px; /* espaço para a nav sticky */
+  scroll-margin-top: 60px; /* espaço para a nav sticky */
 }
 
 /* Cabeçalho de cada seção (emoji + título) */
