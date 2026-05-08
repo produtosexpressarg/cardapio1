@@ -40,6 +40,12 @@
 html {
   scroll-behavior: smooth;
 }
+body{
+  overflow: auto;
+}
+.page-wrapper{
+  overflow-y: auto;
+}
 
 body {
   background-color: var(--bg-base);
@@ -48,6 +54,7 @@ body {
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
+body
 
 /* Scrollbar customizada */
 ::-webkit-scrollbar       { width: 4px; }
