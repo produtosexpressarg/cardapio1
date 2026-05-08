@@ -31,6 +31,9 @@
 /* ----------------------------------------------------------
    RESET & BASE
    ---------------------------------------------------------- */
+/* ----------------------------------------------------------
+   RESET & BASE
+   ---------------------------------------------------------- */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -39,12 +42,7 @@
 
 html {
   scroll-behavior: smooth;
-}
-body{
-  overflow: auto;
-}
-.page-wrapper{
-  overflow-y: auto;
+  height: 100%;
 }
 
 body {
@@ -53,8 +51,9 @@ body {
   font-family: 'DM Sans', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  overflow-y: auto;        /* ← garante scroll vertical */
+  min-height: 100%;
 }
-body
 
 /* Scrollbar customizada */
 ::-webkit-scrollbar       { width: 4px; }
@@ -65,7 +64,7 @@ body
    LAYOUT GERAL
    ---------------------------------------------------------- */
 .page-wrapper {
-  min-height: 100%;
+  min-height: 100vh;
   background: var(--bg-base);
   width: 100%;
   max-width: 100%;
